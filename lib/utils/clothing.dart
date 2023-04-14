@@ -26,7 +26,11 @@ class ClothTile extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.asset(imageURL),
+              child: Image.asset(
+                imageURL,
+                // height: 512,
+                // width: 547,
+              ),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

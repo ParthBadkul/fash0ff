@@ -1,7 +1,9 @@
+import 'package:fashoff/utils/card.dart';
 import 'package:fashoff/utils/clothing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -59,7 +61,7 @@ Widget _buildScrollable(BuildContext context) {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Padding(
@@ -101,14 +103,14 @@ Widget _buildScrollable(BuildContext context) {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 28.0),
               child: TextField(
                 decoration: InputDecoration(
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.search,
                     ),
                     hintText: 'Find your DRIP',
@@ -122,26 +124,26 @@ Widget _buildScrollable(BuildContext context) {
                         borderSide: BorderSide(color: Colors.grey.shade600))),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             // Clothings
-            Container(
+            SizedBox(
               height: 400,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  ClothTile(
-                      imageURL: 'images/1.png',
-                      text: 'Women',
-                      data:
-                          'Revamp your wardrobe with creative designs that accentuate your femininity, using your old clothes'),
                   ClothTile(
                     imageURL: 'images/2.png',
                     text: 'Men',
                     data:
                         'Elevate your style and embrace your masculinity with unique designs crafted from your old clothing.',
                   ),
+                  ClothTile(
+                      imageURL: 'images/4.png',
+                      text: 'Women',
+                      data:
+                          'Revamp your wardrobe with creative designs that accentuate your femininity, using your old clothes'),
                 ],
               ),
             ),
@@ -175,9 +177,20 @@ Widget _buildScrollable(BuildContext context) {
                 ),
               ],
             ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Cards(data: 'Tee\'s'),
+                Cards(data: ' Shirts'),
+                Cards(data: 'Denim'),
+                Cards(data: 'Accessories'),
+                Cards(data: 'Sale'),
+                Cards(data: 'Fash.off Home'),
+              ],
+            ),
           ],
         ),
       )
     ],
-  );
+  ).animate().fadeIn(delay: Duration(milliseconds: 100));
 }
