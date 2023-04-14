@@ -28,30 +28,35 @@ class ClothTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(imageURL),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 18.0,
-                top: 18,
-              ),
-              child: Text(
-                text,
-                style: GoogleFonts.bebasNeue(
-                  fontSize: 18,
-                  letterSpacing: 1.5,
-                  fontWeight: FontWeight.w500,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 18.0,
+                    top: 18,
+                  ),
+                  child: Text(
+                    text,
+                    style: GoogleFonts.bebasNeue(
+                      fontSize: 18,
+                      letterSpacing: 1.5,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-              child: Text(
-                data,
-                style: GoogleFonts.besley(
-                  color: Colors.grey[500],
-                  fontSize: 12,
-                ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0, vertical: 10),
+                  child: Text(
+                    data,
+                    style: GoogleFonts.besley(
+                      color: Colors.grey[500],
+                      fontSize: 12,
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),

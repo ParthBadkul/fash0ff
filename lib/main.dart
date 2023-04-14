@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           brightness: Brightness.dark,
           primarySwatch: Colors.orange,
+          accentColor: Colors.transparent,
         ),
         title: 'Material App',
         home: HomePage());
